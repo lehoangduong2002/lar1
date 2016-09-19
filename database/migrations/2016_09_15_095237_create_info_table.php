@@ -24,7 +24,7 @@ class CreateInfoTable extends Migration
                   ->onUpdate('restrict')
                   ->onDelete('restrict');
 
-            $table->string('ward_id', 5);
+            $table->integer('ward_id');
             $table->index('ward_id', 'id_info_ward_id');
             $table->foreign('ward_id')
                   ->references('wardid')->on('ward')

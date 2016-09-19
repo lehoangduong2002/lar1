@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin', function () {
-    echo 'duong test';
-});
+Route::get('admin/login', 'LoginController@getLogin')->name('login');
+Route::post('admin/login', 'LoginController@checkLogin')->name('checkLogin');
+
+
+Route::get('admin/dashboard', function () {
+    return view('admin.dashboard.main');
+})->name('dashboard');
